@@ -1,6 +1,6 @@
-package org.example.utils;
+package org.startsteps.utils;
 
-import org.example.Main;
+import org.startsteps.Main;
 
 import java.io.IOException;
 import java.io.InputStream;

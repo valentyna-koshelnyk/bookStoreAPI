@@ -1,4 +1,4 @@
-package org.example.model;
+package org.startsteps.model;
 
 public class Books{
     int id;

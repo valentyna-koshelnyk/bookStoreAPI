@@ -1,6 +1,6 @@
-package org.example.resources;
-import org.example.model.Books;
-import org.example.service.BooksDAO;
+package org.startsteps.resources;
+import org.startsteps.model.Books;
+import org.startsteps.service.BooksDAO;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -17,12 +17,13 @@ public class BooksResource {
 
     @GET
     @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Books getBookById(@PathParam("id") String id) {
         return booksDAO.getBookById(id);
     }
 
     @GET
-    @Path("/{priceFilter}")
+    @Path("/filter-by-price")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Books> getBooksByPriceRange(@QueryParam("minPrice") double minPrice,
                                             @QueryParam("maxPrice") double maxPrice) {
@@ -30,8 +31,9 @@ public class BooksResource {
     }
 
     @GET
-    @Path("/{authorFilter}")
-    public List<Books> getBooksByAuthor(@QueryParam("author") String author){
+    @Path("/filter-by-author")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Books> getBooksByAuthor(@QueryParam("author") String author) {
         return booksDAO.getBooksByAuthor(author);
     }
 
@@ -51,6 +53,7 @@ public class BooksResource {
 
     @DELETE
     @Path("/{id}")
+
     public void deleteBook(@PathParam("id") String id){
         booksDAO.deleteBook(id);
     }
