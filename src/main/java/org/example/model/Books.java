@@ -4,10 +4,10 @@ public class Books{
     int id;
     String title;
     String author;
-    String price;
+    double price;
     int quantity;
 
-    public Books(int id, String title, String author, String price, int quantity) {
+    public Books(int id, String title, String author, double price, int quantity) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -41,11 +41,11 @@ public class Books{
         this.author = author;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
